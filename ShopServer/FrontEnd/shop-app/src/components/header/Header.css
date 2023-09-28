@@ -1,0 +1,42 @@
+.header {
+    height: 30em;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .5)), url('../UnImages/acrelia-news-gcXbTYQcJIs-unsplash.jpg');
+    background-size: cover;
+}
+
+.banner {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+
+.banner .top-header {
+    font-weight: bold;
+}
+
+.top-header {
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+.top-discription {
+    animation-name: anim;
+    animation-duration: 2s;
+    animation-delay: .5s;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.dataserver {
+    color: white;
+}

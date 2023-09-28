@@ -1,0 +1,14 @@
+.underline-dark {
+    width: 9em;
+    border: .2em solid black;
+    margin: auto;
+}
+
+.product img {
+    height: 20em;
+}
+
+.product-item {
+    color: #fff;
+    text-decoration: none;
+}

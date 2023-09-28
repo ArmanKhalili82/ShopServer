@@ -1,0 +1,9 @@
+.information {
+    background: #151f20;
+}
+
+.underline {
+    width: 13em;
+    border: .2em solid black;
+    margin: auto;
+}

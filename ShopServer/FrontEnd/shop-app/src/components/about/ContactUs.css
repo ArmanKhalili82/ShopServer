@@ -1,0 +1,32 @@
+.contact {
+    background: url('../UnImages/rezvani-MnPWB-ybjHQ-unsplash.jpg') center no-repeat;
+}
+
+.input {
+    background: transparent;
+    border-color: transparent;
+    border-bottom: .2em solid #fff;
+    border-radius: 50;
+    transition: all .8s;
+}
+
+.input:focus {
+    background: transparent;
+    border-color: transparent;
+}
+
+.submit-button {
+    margin-top: 1em;
+    background-color: #f5593d;
+    transition: all .3s;
+}
+
+.submit-button:hover {
+    background-color: #f9793d;
+    transform: scale(1.2);
+}
+
+.label {
+    display: block;
+}
+
