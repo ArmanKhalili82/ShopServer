@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using ShopServer;
 
 namespace ShopServer.Controllers
 {
@@ -11,23 +13,32 @@ namespace ShopServer.Controllers
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
+        
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public List<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return new List<WeatherForecast>()
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
+                City.add("Tehran");
+            }
+
+            return new List<WeatherForecast>()
+            {
+                City.add("Stockholm");
+            }
+}
+    }
+
+    [HttpPost]
+    public IActionResult Update(WeatherForecast model)
+    {
+        return Ok();
+    }
+
+    [HttpDelete]
+    public IActionResult Delete(int Id)
+    {
+        return Ok();
     }
 }

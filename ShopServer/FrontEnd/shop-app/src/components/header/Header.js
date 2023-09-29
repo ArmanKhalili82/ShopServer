@@ -6,10 +6,16 @@ import Navbar from './Navbar'
 const Header = () => {
 const [users, setUsers] = useState([]);
 
+const [name, setName] = useState("");
+
 const handleClick = async () => {
   const response = await fetch("http://localhost:5145/WeatherForecast")
   const data = await response.json();
   setUsers(data)
+}
+
+const handleSave = async () => {
+  const update = await fetch("http://localhost:5145/WeatherForecast")
 }
 
   return (
@@ -23,13 +29,12 @@ const handleClick = async () => {
                 <div className='dataserver'>
                 {users.map((user) => {
                   return (
-                    <li>{user.date}</li>,
-                    <li>{user.temperatureC}</li>,
-                    <li>{user.temperatureF}</li>,
-                    <li>{user.summary}</li>
+                    <h1>{user.date} - {user.temperatureC} - {user.temperatureF} - {user.summary} - {user.city} </h1>
                   )
                   })}
                 </div>
+                <input type='text' onChange={e => setName().target.value } />
+                <button onClick={handleSave}>Save</button>
             </div>
         </header>
     </div>
