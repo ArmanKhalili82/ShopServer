@@ -5,28 +5,39 @@ namespace ShopServer.Controllers
 
     public class LessonController : Controller
     {
-        private static List<Lesson> Lessons = new List<Lesson>()
+        private static List<Lesson> SubjectLessons = new List<Lesson>()
         {
             new Lesson()
             {
                 Price = 100
+            },
+
+            new Lesson()
+            {
+                Price = 200
             }
         };
 
         [HttpGet(Name = "GetLesson")]
         public List<Lesson> Get()
         {
-            return Lessons;
+            return SubjectLessons;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
+        public IActionResult Getting(int id)
+        {
+            return Ok();
+        }
+
+        [HttpPost]
         public IActionResult Update(Lesson model)
         {
             return Ok();
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Getting(int id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             return Ok();
         }
