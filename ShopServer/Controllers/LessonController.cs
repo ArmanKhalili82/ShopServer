@@ -2,6 +2,8 @@
 
 namespace ShopServer.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class LessonController : Controller
     {
         private static List<Lesson> Lessons = new List<Lesson>()
