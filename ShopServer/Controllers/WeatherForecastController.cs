@@ -28,18 +28,18 @@ namespace ShopServer.Controllers
                 City = "Stockholm"
             });
             return shoplist;
-}
-    }
 
-    [HttpPost]
-    public IActionResult Update(WeatherForecast model)
-    {
-        return Ok();
-    }
+        }
 
-    [HttpDelete]
-    public IActionResult Delete(int Id)
-    {
-        return Ok();
-    }
-}
+        [HttpPost]
+        public IActionResult Update(WeatherForecast model)
+        {
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int Id)
+        {
+            return Ok();
+        }
+    
