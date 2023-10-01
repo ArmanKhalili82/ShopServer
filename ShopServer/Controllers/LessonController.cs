@@ -2,8 +2,7 @@
 
 namespace ShopServer.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+
     public class LessonController : Controller
     {
         private static List<Lesson> Lessons = new List<Lesson>()
@@ -26,7 +25,7 @@ namespace ShopServer.Controllers
             return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Getting(int id)
         {
             return Ok();
