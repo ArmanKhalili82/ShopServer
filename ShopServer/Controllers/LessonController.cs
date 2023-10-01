@@ -19,9 +19,15 @@ namespace ShopServer.Controllers
         }
 
         [HttpGet]
-        public List<Lesson> Get(int id)
+        public IActionResult Update(Lesson model)
         {
-            return Lessons;
+            return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult Getting(int id)
+        {
+            return Ok();
         }
     }
 }
