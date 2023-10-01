@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using ShopServer;
 
@@ -13,20 +12,22 @@ namespace ShopServer.Controllers
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        
+
 
         [HttpGet(Name = "GetWeatherForecast")]
         public List<WeatherForecast> Get()
         {
-            return new List<WeatherForecast>()
+            var shoplist = new List<WeatherForecast>();
+            shoplist.Add(new WeatherForecast()
             {
-                City.add("Tehran");
-            }
+                City = "Tehran"
+            });
 
-            return new List<WeatherForecast>()
+            shoplist.Add(new WeatherForecast()
             {
-                City.add("Stockholm");
-            }
+                City = "Stockholm"
+            });
+            return shoplist;
 }
     }
 
