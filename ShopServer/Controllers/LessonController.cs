@@ -18,7 +18,7 @@ namespace ShopServer.Controllers
             }
         };
 
-        [HttpGet(Name = "GetLesson")]
+        [HttpGet("GetLesson")]
         public List<Lesson> Get()
         {
             return SubjectLessons;
@@ -30,7 +30,7 @@ namespace ShopServer.Controllers
             return Ok();
         }
 
-        [HttpPost]
+        [HttpPost("UpdateLesson")]
         public IActionResult Update(Lesson model)
         {
             return Ok();
