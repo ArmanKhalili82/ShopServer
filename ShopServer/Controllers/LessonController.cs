@@ -27,19 +27,19 @@ namespace ShopServer.Controllers
         [HttpGet("{id}")]
         public IActionResult Getting(int id)
         {
-            return Ok();
+            SubjectLessons.Find(id);
         }
 
         [HttpPost("UpdateLesson")]
         public IActionResult Update(Lesson model)
         {
-            return Ok();
+            SubjectLessons.Add(model);
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok();
+            SubjectLessons.Remove(id);
         }
     }
 }
