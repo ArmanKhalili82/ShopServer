@@ -34,6 +34,22 @@ namespace ShopServer.Controllers
             //return Ok();
         }
 
+        [HttpPost("{id}")]
+        public IActionResult Edit(int id)
+        {
+            var newList = SubjectLessons.Where(x => x.Id == id);
+            SubjectLessons.ForEach(SubjectLessons.Add);
+            return Ok(newList);
+
+            //var result2 = (from n in SubjectLessons
+            //              where n.Id == id
+            //              select n).First();
+            
+            //return Ok(result2);
+            //var a = SubjectLessons.Where(l => l.Id == id).First();
+            //return Ok();
+        }
+
         [HttpPost("UpdateLesson")]
         public IActionResult Create(Lesson model)
         {
