@@ -27,19 +27,28 @@ namespace ShopServer.Controllers
         [HttpGet("{id}")]
         public IActionResult Getting(int id)
         {
-            var result = (from n in SubjectLessons
-                          where n.Id == id select n).First();
-            return Ok(result);
-            //var a = SubjectLessons.Where(l => l.Id == id).First();
-            //return Ok();
+            //var result = (from n in SubjectLessons
+            //              where n.Id == id select n).First();
+            //return Ok(result);
+            var a = SubjectLessons.Where(l => l.Id == id).First();
+            return Ok(a);
         }
 
         [HttpPost("{id}")]
-        public IActionResult Edit(int id)
+        public IActionResult Update(Lesson model)
         {
-            var newList = SubjectLessons.Where(x => x.Id == id);
-            SubjectLessons.ForEach(SubjectLessons.Add);
-            return Ok(newList);
+            var data = SubjectLessons.Where(l => l.Id == model.Id).First();
+
+            data.Price = model.Price;
+            data.Id = model.Id;
+            data.Name = model.Name;
+            data.Teacher = model.Teacher;
+            data.TimeRange = model.TimeRange;
+
+            return Ok(data);
+            //var newList = SubjectLessons.Where(x => x.Id == id);
+            //SubjectLessons.ForEach(SubjectLessons.Add);
+            //return Ok(newList);
 
             //var result2 = (from n in SubjectLessons
             //              where n.Id == id
@@ -60,14 +69,14 @@ namespace ShopServer.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var result1 = (from n in SubjectLessons
-                          where n.Id == id
-                          select n).First();
-            SubjectLessons.Remove(result1);
-            return Ok();
-            //var a = SubjectLessons.Where(l => l.Id == id).First();
-            //SubjectLessons.Remove(a);
+            //var result1 = (from n in SubjectLessons
+            //              where n.Id == id
+            //              select n).First();
+            //SubjectLessons.Remove(result1);
             //return Ok();
+            var a = SubjectLessons.Where(l => l.Id == id).First();
+            SubjectLessons.Remove(a);
+            return Ok();
         }
     }
 }
