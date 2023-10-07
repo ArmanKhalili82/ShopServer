@@ -27,19 +27,23 @@ namespace ShopServer.Controllers
         [HttpGet("{id}")]
         public IActionResult Getting(int id)
         {
-            SubjectLessons.Find(id);
+            var a = SubjectLessons.Where(l => l.Id == id).First();
+            return Ok();
         }
 
         [HttpPost("UpdateLesson")]
         public IActionResult Update(Lesson model)
         {
             SubjectLessons.Add(model);
+            return Ok();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            SubjectLessons.Remove(id);
+            var a = SubjectLessons.Where(l => l.Id == id).First();
+            SubjectLessons.Remove(a);
+            return Ok();
         }
     }
 }
