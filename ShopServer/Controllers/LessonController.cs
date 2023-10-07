@@ -35,7 +35,7 @@ namespace ShopServer.Controllers
         }
 
         [HttpPost("UpdateLesson")]
-        public IActionResult Update(Lesson model)
+        public IActionResult Create(Lesson model)
         {
             SubjectLessons.Add(model);
             return Ok();
