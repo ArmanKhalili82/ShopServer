@@ -11,6 +11,7 @@ import Product3 from './components/products/Product3'
 import Product4 from './components/products/Product4'
 import Product5 from './components/products/Product5'
 import Product6 from './components/products/Product6'
+import Table from "./pages/Table";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/Product4" element={<Product4 />} />
             <Route path="/Product5" element={<Product5 />} />
             <Route path="/Product6" element={<Product6 />} />
+            <Route path="/Table" element={<Table />} />
         </Routes>
         <Footer />
       </BrowserRouter>

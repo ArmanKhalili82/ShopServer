@@ -9,11 +9,13 @@ namespace ShopServer.Controllers
         {
             new Lesson()
             {
+                Id = 1,
                 Price = 100
             },
 
             new Lesson()
             {
+                Id = 2,
                 Price = 200
             }
         };
@@ -27,8 +29,8 @@ namespace ShopServer.Controllers
         [HttpGet("GetById/{id}")]
         public IActionResult GetById(int id)
         {
-            var a = SubjectLessons.Where(l => l.Id == id).First();
-            return Ok(a);
+            var data = SubjectLessons.Where(l => l.Id == id).First();
+            return Ok(data);
         }
 
         [HttpPut("Update")]
@@ -55,8 +57,8 @@ namespace ShopServer.Controllers
         [HttpDelete("Delete/{id}/force")]
         public IActionResult Delete(int id)
         {
-            var a = SubjectLessons.Where(l => l.Id == id).First();
-            SubjectLessons.Remove(a);
+            var data = SubjectLessons.Where(l => l.Id == id).First();
+            SubjectLessons.Remove(data);
             return Ok();
         }
     }
