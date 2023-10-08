@@ -18,23 +18,25 @@ const Table = () => {
 
             {users.map((user) => {
                 return (
-                    <tr style={{border: "1px solid black"}}>
-                        <th style={{border: "1px solid black"}}>Id</th>
-                        <th style={{border: "1px solid black"}}>Name</th>
-                        <th style={{border: "1px solid black"}}>Price</th>
-                    </tr>
+                    <div>
+                        <tr style={{border: "1px solid black"}}>
+                            <th style={{border: "1px solid black"}}>Id</th>
+                            <th style={{border: "1px solid black"}}>Name</th>
+                            <th style={{border: "1px solid black"}}>Price</th>
+                        </tr>
 
-                    <tr style={{border: "1px solid black"}}>
-                        <td style={{border: "1px solid black"}}>{user.id}</td>
-                        <td style={{border: "1px solid black"}}>{user.name}</td>
-                        <td style={{border: "1px solid black"}}>{user.price}</td>
-                    </tr>
+                        <tr style={{border: "1px solid black"}}>
+                            <td style={{border: "1px solid black"}}>{user.id}</td>
+                            <td style={{border: "1px solid black"}}>{user.name}</td>
+                            <td style={{border: "1px solid black"}}>{user.price}</td>
+                        </tr>
 
-                    <tr style={{border: "1px solid black"}}>
-                        <td style={{border: "1px solid black"}}>{user.id}</td>
-                        <td style={{border: "1px solid black"}}>{user.name}</td>
-                        <td style={{border: "1px solid black"}}>{user.price}</td>
-                    </tr>
+                        <tr style={{border: "1px solid black"}}>
+                            <td style={{border: "1px solid black"}}>{user.id}</td>
+                            <td style={{border: "1px solid black"}}>{user.name}</td>
+                            <td style={{border: "1px solid black"}}>{user.price}</td>
+                        </tr>
+                    </div>
                 )
             })}
 
