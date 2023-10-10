@@ -13,6 +13,12 @@ const Table = () => {
 
     const [search, setSearch] = useState("")
 
+    const handleDelete = async () => {
+        const response = await fetch("https://localhost:7034/Delete/{id}/force")
+        const data = await response.json();
+        setUsers(data)
+    }
+
   return (
     <div>
         <h1>This Is My Table</h1>
@@ -22,7 +28,7 @@ const Table = () => {
         <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
 
             {users.filter((user) => {
-                return search.toLowerCase() === '' ? user : user.name.includes(search);
+                return search.toLowerCase() === '' ? user : user.name.toLowerCase().includes(search);
             }).map((user) => {
                 return (
                     <div>
@@ -41,7 +47,8 @@ const Table = () => {
                     </div>
                 )
             })}
-            <button>Edit/Delete</button>
+            <button>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
 
         </table>
     </div>
