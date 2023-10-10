@@ -46,9 +46,7 @@ const Table = () => {
 
                         <tr>
                             <button>Edit</button>
-                            <button onClick={() => handleDelete {
-                                user.id
-                            }}>Delete</button>
+                            <button onClick={() => handleDelete(user.id)}>Delete</button>
                         </tr>
 
                     </div>
