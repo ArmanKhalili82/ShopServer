@@ -1,14 +1,17 @@
 import React, {useState} from 'react'
 
+
 const Table = () => {
 
     const [users, setUsers] = useState([]);
 
     const handleRefresh = async () => {
-        const response = await fetch("https://localhost:7034/Lesson")
+        const response = await fetch("https://localhost:7034/GetAll")
         const data = await response.json();
         setUsers(data)
     }
+
+    const [search, setSearch] = useState("")
 
   return (
     <div>
@@ -16,7 +19,11 @@ const Table = () => {
         <button onClick={handleRefresh}>Refresh Table</button>
         <table style={{width: '100%', border: "1px solid black"}}>
 
-            {users.map((user) => {
+        <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
+
+            {users.filter((user) => {
+                return search.toLowerCase() === '' ? user : user.name.includes(search);
+            }).map((user) => {
                 return (
                     <div>
                         <tr style={{border: "1px solid black"}}>
@@ -31,14 +38,10 @@ const Table = () => {
                             <td style={{border: "1px solid black"}}>{user.price}</td>
                         </tr>
 
-                        <tr style={{border: "1px solid black"}}>
-                            <td style={{border: "1px solid black"}}>{user.id}</td>
-                            <td style={{border: "1px solid black"}}>{user.name}</td>
-                            <td style={{border: "1px solid black"}}>{user.price}</td>
-                        </tr>
                     </div>
                 )
             })}
+            <button>Edit/Delete</button>
 
         </table>
     </div>

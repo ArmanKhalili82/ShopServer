@@ -10,12 +10,14 @@ namespace ShopServer.Controllers
             new Lesson()
             {
                 Id = 1,
+                Name = "Jack",
                 Price = 100
             },
 
             new Lesson()
             {
                 Id = 2,
+                Name = "Jason",
                 Price = 200
             }
         };
