@@ -14,7 +14,7 @@ const Table = () => {
     const [search, setSearch] = useState("")
 
     const handleDelete = async (id) => {
-        const response = await fetch(`https://localhost:7034/Delete/${id}/force`)
+        const response = await fetch(`https://localhost:7034/Delete/${id}/force`), {method: 'DELETE'}
         const data = await response.json();
         setUsers(data)
     }
