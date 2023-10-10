@@ -13,8 +13,8 @@ const Table = () => {
 
     const [search, setSearch] = useState("")
 
-    const handleDelete = async () => {
-        const response = await fetch("https://localhost:7034/Delete/{id}/force")
+    const handleDelete = async (id) => {
+        const response = await fetch(`https://localhost:7034/Delete/${id}/force`)
         const data = await response.json();
         setUsers(data)
     }
@@ -44,11 +44,17 @@ const Table = () => {
                             <td style={{border: "1px solid black"}}>{user.price}</td>
                         </tr>
 
+                        <tr>
+                            <button>Edit</button>
+                            <button onClick={() => handleDelete {
+                                user.id
+                            }}>Delete</button>
+                        </tr>
+
                     </div>
                 )
             })}
-            <button>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
+            
 
         </table>
     </div>
