@@ -31,7 +31,7 @@ function App() {
             <Route path="/Product5" element={<Product5 />} />
             <Route path="/Product6" element={<Product6 />} />
             <Route path="/Table" element={<Table />} />
-            <Route path="/Edit" element={<Edit />} />
+            <Route path="/Edit/:lessonid" element={<Edit />} />
         </Routes>
         <Footer />
       </BrowserRouter>
