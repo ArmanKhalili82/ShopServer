@@ -8,9 +8,8 @@ const Edit = () => {
     const [user, setUser] = useState([]);
 
     useEffect(async (lessonid) => {
-        const response = await fetch(`https://localhost:7034/Update/${lessonid}, {
-            method: "put",
-        }`)
+        const response = await fetch(`https://localhost:7034/GetById/${lessonid}`);
+        []
     })
 
     // const handleUpdate = async(id) => {
@@ -25,8 +24,6 @@ const Edit = () => {
 
   return (
     <div>
-        {users.map((user) => {
-            return (
                 <div>
                     <form>
                     Id
@@ -51,9 +48,6 @@ const Edit = () => {
             
                     <button type='submit' onClick={handleUpdate}>Update</button>
                 </div>
-                
-            )
-        })}
     </div>
   )
 }
