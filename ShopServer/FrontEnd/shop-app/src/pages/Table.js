@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
 
 
 const Table = () => {
@@ -44,7 +45,9 @@ const Table = () => {
                         </tr>
 
                         <tr>
-                            <button>Edit</button>
+                            <button>
+                                <Link to="/Edit">Edit</Link>
+                            </button>
                             <button onClick={() => handleDelete(user.id)}>Delete</button>
                         </tr>
 
