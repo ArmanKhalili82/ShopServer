@@ -7,10 +7,10 @@ const Edit = () => {
 
     const [user, setUser] = useState([]);
 
-    useEffect(async (lessonid) => {
+    useEffect(async () => {
         const response = await fetch(`https://localhost:7034/GetById/${lessonid}`);
-        []
-    })
+        
+    },[])
 
     // const handleUpdate = async(id) => {
     //     const response = await fetch(`https://localhost:7034/Update/${id}`, {
