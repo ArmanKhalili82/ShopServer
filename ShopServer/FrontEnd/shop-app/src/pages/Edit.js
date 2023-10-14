@@ -22,15 +22,15 @@ const Edit = () => {
 
     },[])
 
-    // const handleUpdate = async(id) => {
-    //     const response = await fetch(`https://localhost:7034/Update/${id}`, {
-    //         method: "put",
-    //         body: response.json(),
-    //         headers: {"Content-Type": "application/json"}
-    //     })
-    //     const data = await response.json();
-    //     setUsers(data)
-    // }
+    const handleUpdate = async(id) => {
+        const data = [id: id, name: name, price: price]
+        const response = await fetch(`https://localhost:7034/Update/${id}`, {
+            method: "put",
+            body: response.data(),
+            headers: {"Content-Type": "application/json"}
+        })
+
+    }
 
   return (
     <div>
@@ -50,7 +50,7 @@ const Edit = () => {
                 <input type='number' value={price} onChange={(e) => setPrice(e.target.value)} />
             </form>
     
-            {/* <button type='submit' onClick={handleUpdate}>Update</button> */}
+            <button type='submit' onClick={handleUpdate}>Update</button>
         </div>
     </div>
   )
