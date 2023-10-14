@@ -45,9 +45,10 @@ const Table = () => {
                         </tr>
 
                         <tr>
-                            
-                            <Link to={`/Edit/${user.id}`}></Link>
-                            
+                            <button>
+                                <Link to={`/Edit/${user.id}`}>Edit</Link>
+                            </button>
+
                             <button onClick={() => handleDelete(user.id)}>Delete</button>
                         </tr>
 

@@ -6,10 +6,14 @@ const Edit = () => {
     let {lessonid} = useParams();
 
     const [user, setUser] = useState([]);
+    const [id, setId] = useState(null);
+    const [name, setName] = useState("");
+    const [price, setPrice] = useState("");
 
     useEffect(async () => {
         const response = await fetch(`https://localhost:7034/GetById/${lessonid}`);
-        
+        const data = await response.json();
+        setUser(data)
     },[])
 
     // const handleUpdate = async(id) => {
@@ -24,30 +28,24 @@ const Edit = () => {
 
   return (
     <div>
-                <div>
-                    <form>
-                    Id
-                    <input type='number' placeholder='Id'>
-                        {user.id}
-                    </input>
-                    </form>
+        <div>
+            <form>
+                Id
+            <input type='number' value={id} />
+            </form>
             
-                    <form>
-                        Name
-                        <input type='text' placeholder='Name'>
-                            {user.name}
-                        </input>
-                    </form>
-            
-                    <form>
-                        Price
-                        <input type='number' placeholder='Price'>
-                            {user.price}
-                        </input>
-                    </form>
-            
-                    <button type='submit' onClick={handleUpdate}>Update</button>
-                </div>
+            <form>
+                Name
+                <input type='text' value={name} />
+            </form>
+    
+            <form>
+                Price
+                <input type='number' value={price} />
+            </form>
+    
+            {/* <button type='submit' onClick={handleUpdate}>Update</button> */}
+        </div>
     </div>
   )
 }
