@@ -16,7 +16,8 @@ const Edit = () => {
         setUser(data)
     }
 
-    useEffect( (getData) => {
+    useEffect( () => {
+        getData();
         // const response = fetch(`https://localhost:7034/GetById/${lessonid}`);
         // const data = response.json();
         // setUser(data)
