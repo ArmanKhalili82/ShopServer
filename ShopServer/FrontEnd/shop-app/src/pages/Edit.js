@@ -23,10 +23,10 @@ const Edit = () => {
     },[])
 
     const handleUpdate = async(id) => {
-        const data = [id: id, name: name, price: price]
+        const data = {id: id, name: name, price: price}
         const response = await fetch(`https://localhost:7034/Update/${id}`, {
             method: "put",
-            body: response.data(),
+            body: data(),
             headers: {"Content-Type": "application/json"}
         })
 
