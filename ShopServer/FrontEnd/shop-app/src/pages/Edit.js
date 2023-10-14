@@ -10,10 +10,16 @@ const Edit = () => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
 
-    useEffect(async () => {
+    const getData = async () => {
         const response = await fetch(`https://localhost:7034/GetById/${lessonid}`);
         const data = await response.json();
         setUser(data)
+    }
+
+    useEffect( (getData) => {
+        // const response = fetch(`https://localhost:7034/GetById/${lessonid}`);
+        // const data = response.json();
+        // setUser(data)
     },[])
 
     // const handleUpdate = async(id) => {
