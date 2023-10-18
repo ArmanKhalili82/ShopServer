@@ -36,7 +36,7 @@ namespace ShopServer.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(Lesson model)
+        public IActionResult Update([FromBody]Lesson model)
         {
             var data = SubjectLessons.Where(l => l.Id == model.Id).First();
 

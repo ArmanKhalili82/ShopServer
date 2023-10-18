@@ -23,6 +23,9 @@ const Table = () => {
     <div>
         <h1>This Is My Table</h1>
         <button onClick={handleRefresh}>Refresh Table</button>
+        <button>
+            <Link to={"/Create"}>Create New</Link>
+        </button>
         <table style={{width: '100%', border: "1px solid black"}}>
 
         <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />

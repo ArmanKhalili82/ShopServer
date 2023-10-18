@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const Edit = () => {
+
+    const navigate = useNavigate();
 
     let {lessonid} = useParams();
 
@@ -23,12 +25,16 @@ const Edit = () => {
     },[])
 
     const handleUpdate = async() => {
+        
+
         const data = {id: id, name: name, price: price}
         await fetch(`https://localhost:7034/Update/`, {
             method: "put",
-            body: data.stringify(data),
+            body: JSON.stringify(data),
             headers: {"Content-Type": "application/json"}
         })
+
+        navigate("/Table")
 
     }
 
