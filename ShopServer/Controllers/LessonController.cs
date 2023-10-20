@@ -54,7 +54,8 @@ namespace ShopServer.Controllers
         public IActionResult Create([FromBody]Lesson model)
         {
             Random random = new Random();
-            int Id = random.Next();
+            int id = random.Next(100, 1000);
+            model.Id = id;
             SubjectLessons.Add(model);
             return Ok();
         }
