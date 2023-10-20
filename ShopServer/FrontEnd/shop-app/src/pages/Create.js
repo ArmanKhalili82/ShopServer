@@ -6,8 +6,10 @@ const Create = () => {
     const [price, setPrice] = useState("");
 
     const handleCreate = async () => {
+        const data = {name: name, price: price}
         await fetch("https://localhost:7034/Create", {
             method: "post",
+            body: JSON.stringify(data),
             headers: {"Content-Type": "application/json"}
         })
     }
@@ -20,9 +22,9 @@ const Create = () => {
 
             Price
             <input type='number' placeholder='Price' onChange={(e) => setPrice(e.target.value)} />
+            <button type='submit' onClick={handleCreate}>Create</button>
         </form>
 
-          <button type='submit' onClick={handleCreate}>Create</button>
     </div>
   )
 }

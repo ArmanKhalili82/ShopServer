@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ShopServer.Controllers
 {
@@ -52,6 +53,8 @@ namespace ShopServer.Controllers
         [HttpPost("Create")]
         public IActionResult Create([FromBody]Lesson model)
         {
+            Random random = new Random();
+            int Id = random.Next();
             SubjectLessons.Add(model);
             return Ok();
         }
