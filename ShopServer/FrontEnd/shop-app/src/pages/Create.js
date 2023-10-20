@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Create = () => {
+
+    const [name, setName] = useState("");
+    const [price, setPrice] = useState("");
 
     const handleCreate = async () => {
         await fetch("https://localhost:7034/Create", {
@@ -12,18 +15,11 @@ const Create = () => {
   return (
     <div>
         <form>
-            Id
-            <input type='number' placeholder='Id' />
-        </form>
-
-        <form>
             Name
-            <input type='string' placeholder='Name' onChange={(e) => e.target.value} />
-        </form>
+            <input type='string' placeholder='Name' onChange={(e) =>setName(e.target.value)} />
 
-        <form>
             Price
-            <input type='number' placeholder='Price' onChange={(e) => e.target.value} />
+            <input type='number' placeholder='Price' onChange={(e) => setPrice(e.target.value)} />
         </form>
 
           <button type='submit' onClick={handleCreate}>Create</button>

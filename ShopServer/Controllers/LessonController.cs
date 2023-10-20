@@ -50,7 +50,7 @@ namespace ShopServer.Controllers
         }
 
         [HttpPost("Create")]
-        public IActionResult Create(Lesson model)
+        public IActionResult Create([FromBody]Lesson model)
         {
             SubjectLessons.Add(model);
             return Ok();
