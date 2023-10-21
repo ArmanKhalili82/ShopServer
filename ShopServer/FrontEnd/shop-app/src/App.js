@@ -14,6 +14,7 @@ import Product6 from './components/products/Product6'
 import Table from "./pages/Table";
 import Edit from "./pages/Edit";
 import Create from "./pages/Create";
+import Createedit from "./pages/Createedit";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/Table" element={<Table />} />
             <Route path="/Edit/:lessonid" element={<Edit />} />
             <Route path="/Create" element={<Create />} />
+            <Route path="/Create" element={<Createedit />} />
         </Routes>
         <Footer />
       </BrowserRouter>
