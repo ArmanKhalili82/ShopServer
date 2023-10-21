@@ -5,7 +5,7 @@ const Createedit = () => {
 
     
 
-    if (user.id == lessonid) {
+    
 
         // this is update operator
         
@@ -26,7 +26,10 @@ const Createedit = () => {
         }
     
         useEffect( () => {
-            getData();
+            if (lessonid !== new ) {
+                
+                getData();
+            }
     
         },[])
     
@@ -43,9 +46,9 @@ const Createedit = () => {
             navigate("/Table")
     
         }
-    }
+    
 
-    else {
+    
         
         // this is create operator
         const handleCreate = async () => {
@@ -56,7 +59,7 @@ const Createedit = () => {
                 headers: {"Content-Type": "application/json"}
             })
         }
-    }
+   
 
 
     
