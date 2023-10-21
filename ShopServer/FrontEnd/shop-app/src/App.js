@@ -35,7 +35,7 @@ function App() {
             <Route path="/Table" element={<Table />} />
             <Route path="/Edit/:lessonid" element={<Edit />} />
             <Route path="/Create" element={<Create />} />
-            <Route path="/Createedit:lessonid" element={<Createedit />} />
+            <Route path="/Createedit/:lessonid" element={<Createedit />} />
         </Routes>
         <Footer />
       </BrowserRouter>
