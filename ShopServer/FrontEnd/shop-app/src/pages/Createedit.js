@@ -26,7 +26,7 @@ const Createedit = () => {
         }
     
         useEffect( () => {
-            if (lessonid !== new ) {
+            if (lessonid !== "new") {
                 
                 getData();
             }
@@ -58,7 +58,19 @@ const Createedit = () => {
                 body: JSON.stringify(data),
                 headers: {"Content-Type": "application/json"}
             })
+
+            navigate("/Table")
         }
+
+        const handleSave = async () => {
+            if (lessonid !== "new") {
+                handleUpdate()
+            }
+
+            else {
+                handleCreate()
+            }
+        } 
    
 
 
@@ -73,8 +85,8 @@ const Createedit = () => {
 
             Price
             <input type='number' placeholder='Price' onChange={(e) =>setPrice(e.target.value)} />
-            <button type="submit" onClick= { handleCreate} >Create</button>
-            <button type="submit" onClick={ handleUpdate } >Update</button>
+            <button type="submit" onClick={handleSave}>Save</button>
+            
             
         </form>
     </div>

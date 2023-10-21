@@ -26,6 +26,11 @@ const Table = () => {
         <button>
             <Link to={"/Create"}>Create New</Link>
         </button>
+
+        <button>
+            <Link to={'/Createedit/new'}>Create New Lesson</Link>
+        </button>
+
         <table style={{width: '100%', border: "1px solid black"}}>
 
         <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
@@ -53,6 +58,8 @@ const Table = () => {
                             </button>
 
                             <button onClick={() => handleDelete(user.id)}>Delete</button>
+
+                            
                         </tr>
 
                     </div>
