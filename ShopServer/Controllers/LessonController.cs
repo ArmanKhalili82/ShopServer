@@ -12,14 +12,18 @@ namespace ShopServer.Controllers
             {
                 Id = 1,
                 Name = "Jack",
-                Price = 100
+                Price = 100,
+                Role = "Admin",
+                Gender = true
             },
 
             new Lesson()
             {
                 Id = 2,
                 Name = "Jason",
-                Price = 200
+                Price = 200,
+                Role = "User",
+                Gender = false
             }
         };
 
@@ -39,13 +43,15 @@ namespace ShopServer.Controllers
         [HttpPut("Update")]
         public IActionResult Update([FromBody]Lesson model)
         {
-            var data = SubjectLessons.Where(l => l.Id == model.Id).First();
+            var data = SubjectLessons.Where(l => l.Id == model.Id).FirstOrDefault();
 
             data.Price = model.Price;
             data.Id = model.Id;
             data.Name = model.Name;
             data.Teacher = model.Teacher;
             data.TimeRange = model.TimeRange;
+            data.Gender = model.Gender;
+            data.Role = model.Role;
 
             return Ok(data);
         }
@@ -63,7 +69,7 @@ namespace ShopServer.Controllers
         [HttpDelete("Delete/{id}/force")]
         public IActionResult Delete(int id)
         {
-            var data = SubjectLessons.Where(l => l.Id == id).First();
+            var data = SubjectLessons.Where(l => l.Id == id).FirstOrDefault();
             SubjectLessons.Remove(data);
             return Ok();
         }

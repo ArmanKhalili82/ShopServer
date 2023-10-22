@@ -7,5 +7,7 @@
         public int Price { get; set; }
         public int TimeRange { get; set; }
         public string Teacher { get; set; }
+        public string Role { get; set; }
+        public bool Gender { get; set; }
     }
 }

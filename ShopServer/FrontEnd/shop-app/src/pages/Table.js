@@ -23,10 +23,7 @@ const Table = () => {
     <div>
         <h1>This Is My Table</h1>
         <button onClick={handleRefresh}>Refresh Table</button>
-        <button>
-            <Link to={"/Create"}>Create New</Link>
-        </button>
-
+        
         <button>
             <Link to={'/Createedit/new'}>Create New Lesson</Link>
         </button>
@@ -44,23 +41,28 @@ const Table = () => {
                             <th style={{border: "1px solid black"}}>Id</th>
                             <th style={{border: "1px solid black"}}>Name</th>
                             <th style={{border: "1px solid black"}}>Price</th>
+                            <th style={{border: "1px solid black"}}>Gender</th>
+                            <th style={{border: "1px solid black"}}>Role</th>
                         </tr>
 
                         <tr style={{border: "1px solid black"}}>
                             <td style={{border: "1px solid black"}}>{user.id}</td>
                             <td style={{border: "1px solid black"}}>{user.name}</td>
                             <td style={{border: "1px solid black"}}>{user.price}</td>
+                            <td style={{border: "1px solid black"}}>{user.gender}</td>
+                            <td style={{border: "1px solid black"}}>{user.role}</td>
                         </tr>
 
                         <tr>
                             <button>
-                                <Link to={`/Edit/${user.id}`}>Edit</Link>
+                                <Link to={`/Createedit/${user.id}`}>Edit</Link>
                             </button>
 
                             <button onClick={() => handleDelete(user.id)}>Delete</button>
 
                             
                         </tr>
+                        
 
                     </div>
                 )
