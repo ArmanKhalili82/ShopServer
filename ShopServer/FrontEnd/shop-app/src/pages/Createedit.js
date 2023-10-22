@@ -13,7 +13,7 @@ const Createedit = () => {
         const [name, setName] = useState("");
         const [price, setPrice] = useState("");
         const [role, setRole] = useState("");
-        const [gender, setGender] = useState(true);
+        const [gender, setGender] = useState("");
     
         const getData = async () => {
             const response = await fetch(`https://localhost:7034/GetById/${lessonid}`);
@@ -71,10 +71,10 @@ const Createedit = () => {
                 handleCreate()
             }
         } 
+
+
+        
    
-
-
-    
 
 
   return (
@@ -97,16 +97,10 @@ const Createedit = () => {
             
             <div className="container mt-3">
 
-                <form on action="/action_page.php">
                     <div className="form-check">
-                        <input type="radio" className="form-check-input" id="radio1" name="optradio" value="option1" checked={true} />
+                        <input onChange={(e) => setGender(e.target.value)} type="checkbox" className="form-check-input" checked={gender} />
                         <label className="form-check-label" htmlFor="radio1">Male</label>
                     </div>
-                    <div className="form-check">
-                        <input type="radio" className="form-check-input" id="radio2" name="optradio" value="option2" />
-                        <label className="form-check-label" htmlFor="radio2">Female</label>
-                    </div>
-                </form>
             </div>
 
 

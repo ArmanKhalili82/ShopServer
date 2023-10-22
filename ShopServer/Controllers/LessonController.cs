@@ -23,7 +23,7 @@ namespace ShopServer.Controllers
                 Name = "Jason",
                 Price = 200,
                 Role = "User",
-                Gender = false
+                Gender = true
             }
         };
 
