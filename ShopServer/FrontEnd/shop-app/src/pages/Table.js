@@ -43,6 +43,7 @@ const Table = () => {
                             <th style={{border: "1px solid black"}}>Price</th>
                             <th style={{border: "1px solid black"}}>Gender</th>
                             <th style={{border: "1px solid black"}}>Role</th>
+                            <th style={{border: "1px solid black"}}>Level</th>
                         </tr>
 
                         <tr style={{border: "1px solid black"}}>
@@ -51,6 +52,7 @@ const Table = () => {
                             <td style={{border: "1px solid black"}}>{user.price}</td>
                             <td style={{border: "1px solid black"}}>{user.gender? "Male": "Female"}</td>
                             <td style={{border: "1px solid black"}}>{user.role}</td>
+                            <td style={{border: "1px solid black"}}>{user.level}</td>
                         </tr>
 
                         <tr>

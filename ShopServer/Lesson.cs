@@ -9,5 +9,6 @@
         public string Teacher { get; set; }
         public string Role { get; set; }
         public bool Gender { get; set; }
+        public string Level { get; set; }
     }
 }

@@ -14,7 +14,8 @@ namespace ShopServer.Controllers
                 Name = "Jack",
                 Price = 100,
                 Role = "Admin",
-                Gender = true
+                Gender = true,
+                Level = "Normal"
             },
 
             new Lesson()
@@ -23,7 +24,8 @@ namespace ShopServer.Controllers
                 Name = "Jason",
                 Price = 200,
                 Role = "User",
-                Gender = true
+                Gender = true,
+                Level = "Advanced"
             }
         };
 
@@ -36,7 +38,7 @@ namespace ShopServer.Controllers
         [HttpGet("GetById/{id}")]
         public IActionResult GetById(int id)
         {
-            var data = SubjectLessons.Where(l => l.Id == id).First();
+            var data = SubjectLessons.Where(l => l.Id == id).FirstOrDefault();
             return Ok(data);
         }
 
@@ -52,6 +54,7 @@ namespace ShopServer.Controllers
             data.TimeRange = model.TimeRange;
             data.Gender = model.Gender;
             data.Role = model.Role;
+            data.Level = model.Level;
 
             return Ok(data);
         }

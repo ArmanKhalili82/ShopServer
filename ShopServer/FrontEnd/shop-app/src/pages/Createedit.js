@@ -14,6 +14,7 @@ const Createedit = () => {
         const [price, setPrice] = useState("");
         const [role, setRole] = useState("");
         const [gender, setGender] = useState("");
+        const [level, setLevel] = useState("");
     
         const getData = async () => {
             const response = await fetch(`https://localhost:7034/GetById/${lessonid}`);
@@ -23,6 +24,7 @@ const Createedit = () => {
             setPrice(data.price);
             setRole(data.role);
             setGender(data.gender);
+            setLevel(data.level);
         }
     
         useEffect( () => {
@@ -36,7 +38,7 @@ const Createedit = () => {
         const handleUpdate = async() => {
             
     
-            const data = {id: id, name: name, price: price, role: role, gender: gender}
+            const data = {id: id, name: name, price: price, role: role, gender: gender, level: level}
             await fetch(`https://localhost:7034/Update/`, {
                 method: "put",
                 body: JSON.stringify(data),
@@ -52,7 +54,7 @@ const Createedit = () => {
         
         // this is create operator
         const handleCreate = async () => {
-            const data = {name: name, price: price, role: role, gender: gender}
+            const data = {name: name, price: price, role: role, gender: gender, level: level}
             await fetch("https://localhost:7034/Create", {
                 method: "post",
                 body: JSON.stringify(data),
@@ -101,6 +103,12 @@ const Createedit = () => {
                         <input onChange={(e) => setGender(e.target.checked)} type="checkbox" className="form-check-input" checked={gender} />
                         <label className="form-check-label" htmlFor="radio1">Male</label>
                     </div>
+            </div>
+
+            <div>
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Easy" name="level" /> Easy
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Normal" name="level" /> Normal
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Advanced" name="level" /> Advanced
             </div>
 
 
