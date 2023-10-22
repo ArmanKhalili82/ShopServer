@@ -98,7 +98,7 @@ const Createedit = () => {
             <div className="container mt-3">
 
                     <div className="form-check">
-                        <input onChange={(e) => setGender(e.target.value)} type="checkbox" className="form-check-input" checked={gender} />
+                        <input onChange={(e) => setGender(e.target.checked)} type="checkbox" className="form-check-input" checked={gender} />
                         <label className="form-check-label" htmlFor="radio1">Male</label>
                     </div>
             </div>
