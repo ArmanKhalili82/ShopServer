@@ -14,7 +14,7 @@ const Createedit = () => {
         const [price, setPrice] = useState("");
         const [role, setRole] = useState("");
         const [gender, setGender] = useState("");
-        const [level, setLevel] = useState("");
+        const [level, setLevel] = useState("Easy");
     
         const getData = async () => {
             const response = await fetch(`https://localhost:7034/GetById/${lessonid}`);
@@ -83,10 +83,10 @@ const Createedit = () => {
     <div>
         <form>
             Name
-            <input type='string' placeholder='Name' onChange={(e) =>setName(e.target.value)} />
+            <input value={name} type='string' placeholder='Name' onChange={(e) =>setName(e.target.value)} />
 
             Price
-            <input type='number' placeholder='Price' onChange={(e) =>setPrice(e.target.value)} />
+            <input value={price} type='number' placeholder='Price' onChange={(e) =>setPrice(e.target.value)} />
 
             <div className="container mt-3">
                 <form>  
@@ -106,9 +106,9 @@ const Createedit = () => {
             </div>
 
             <div>
-                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Easy" name="level" /> Easy
-                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Normal" name="level" /> Normal
-                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Advanced" name="level" /> Advanced
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Easy" name="level" defaultChecked = {level == "Easy"} /> Easy
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Normal" name="level" defaultChecked = {level == "Normal"} /> Normal
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Advanced" name="level" defaultChecked = {level == "Advanced"} /> Advanced
             </div>
 
 
