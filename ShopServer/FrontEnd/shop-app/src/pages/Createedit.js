@@ -13,7 +13,7 @@ const Createedit = () => {
         const [name, setName] = useState("");
         const [price, setPrice] = useState("");
         const [role, setRole] = useState("");
-        const [gender, setGender] = useState("");
+        const [gender, setGender] = useState(true);
         const [level, setLevel] = useState("Easy");
     
         const getData = async () => {
@@ -109,6 +109,7 @@ const Createedit = () => {
                 <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Easy" name="level" defaultChecked = {level == "Easy"} /> Easy
                 <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Normal" name="level" defaultChecked = {level == "Normal"} /> Normal
                 <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Advanced" name="level" defaultChecked = {level == "Advanced"} /> Advanced
+                <h1>{level}</h1>
             </div>
 
 
