@@ -1,4 +1,4 @@
-﻿namespace ShopServer
+﻿namespace Business.Lesson
 {
     public class Lesson
     {
