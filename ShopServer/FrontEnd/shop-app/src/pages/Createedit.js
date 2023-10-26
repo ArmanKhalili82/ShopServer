@@ -106,9 +106,9 @@ const Createedit = () => {
             </div>
 
             <div>
-                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Easy" name="level" defaultChecked = {level == "Easy"} /> Easy
-                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Normal" name="level" defaultChecked = {level == "Normal"} /> Normal
-                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Advanced" name="level" defaultChecked = {level == "Advanced"} /> Advanced
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Easy" name="level" checked = {level == "Easy"} /> Easy
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Normal" name="level" checked = {level == "Normal"} /> Normal
+                <input onChange={(e) => setLevel(e.target.value)} type="radio" value="Advanced" name="level" checked = {level == "Advanced"} /> Advanced
                 <h1>{level}</h1>
             </div>
 
