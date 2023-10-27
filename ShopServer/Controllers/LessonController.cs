@@ -6,28 +6,7 @@ namespace ShopServer.Controllers
 
     public class LessonController : Controller
     {
-        private static List<Lesson> SubjectLessons = new List<Lesson>()
-        {
-            new Lesson()
-            {
-                Id = 1,
-                Name = "Jack",
-                Price = 100,
-                Role = "Admin",
-                Gender = true,
-                Level = "Normal"
-            },
-
-            new Lesson()
-            {
-                Id = 2,
-                Name = "Jason",
-                Price = 200,
-                Role = "User",
-                Gender = true,
-                Level = "Advanced"
-            }
-        };
+        
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
@@ -45,16 +24,7 @@ namespace ShopServer.Controllers
         [HttpPut("Update")]
         public IActionResult Update([FromBody]Lesson model)
         {
-            var data = SubjectLessons.Where(l => l.Id == model.Id).FirstOrDefault();
-
-            data.Price = model.Price;
-            data.Id = model.Id;
-            data.Name = model.Name;
-            data.Teacher = model.Teacher;
-            data.TimeRange = model.TimeRange;
-            data.Gender = model.Gender;
-            data.Role = model.Role;
-            data.Level = model.Level;
+            
 
             return Ok(data);
         }
@@ -62,10 +32,7 @@ namespace ShopServer.Controllers
         [HttpPost("Create")]
         public IActionResult Create([FromBody]Lesson model)
         {
-            Random random = new Random();
-            int id = random.Next(100, 1000);
-            model.Id = id;
-            SubjectLessons.Add(model);
+            
             return Ok();
         }
 

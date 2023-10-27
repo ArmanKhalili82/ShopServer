@@ -10,5 +10,9 @@ namespace Business
     public interface ILessonService
     {
         void Create(Lesson Model);
+        void Update(Lesson Model);
+        Lesson GetById(int id);
+        Lesson GetAll();
+        void Delete(int id);
     }
 }

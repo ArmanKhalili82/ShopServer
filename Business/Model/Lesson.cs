@@ -1,4 +1,4 @@
-﻿namespace Business.Lesson
+﻿namespace Business.Model
 {
     public class Lesson
     {
