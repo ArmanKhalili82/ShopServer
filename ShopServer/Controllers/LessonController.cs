@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business;
+using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace ShopServer.Controllers
@@ -11,6 +12,11 @@ namespace ShopServer.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
+            private ILessonService _LessonService;
+            public LessonController(ILessonService lessonService)
+        {
+            _LessonService = lessonService;
+        }
             return Ok(SubjectLessons);
         }
 

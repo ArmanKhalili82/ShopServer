@@ -12,7 +12,7 @@ namespace Business
         void Create(Lesson Model);
         void Update(Lesson Model);
         Lesson GetById(int id);
-        Lesson GetAll();
+        List<Lesson> GetAll();
         void Delete(int id);
     }
 }

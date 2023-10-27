@@ -58,7 +58,7 @@ namespace Business
 
         public List<Lesson> GetAll()
         {
-            return Lesson;
+            return SubjectLessons;
         }
 
         public void Delete(int id)
