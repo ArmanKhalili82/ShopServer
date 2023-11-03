@@ -1,6 +1,7 @@
 ﻿using Business;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using Business.Model;
 
 namespace ShopServer.Controllers
 {
@@ -18,8 +19,8 @@ namespace ShopServer.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            _LessonService.GetAll();
-            return Ok(SubjectLessons);
+            var data = _LessonService.GetAll();
+            return Ok(data);
         }
 
         [HttpGet("GetById/{id}")]
@@ -33,7 +34,7 @@ namespace ShopServer.Controllers
         public IActionResult Update([FromBody]Lesson model)
         {
             _LessonService.Update(model);
-            return Ok(data);
+            return Ok();
         }
 
         [HttpPost("Create")]
@@ -46,8 +47,7 @@ namespace ShopServer.Controllers
         [HttpDelete("Delete/{id}/force")]
         public IActionResult Delete(int id)
         {
-            var data = _LessonService.Delete(id);
-            SubjectLessons.Remove(data);
+            _LessonService.Delete(id);
             return Ok();
         }
     }

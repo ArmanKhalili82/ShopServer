@@ -17,6 +17,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<ILessonService, LessonService>();
 
+builder.Services.AddScoped<IPersonService, PersonService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
