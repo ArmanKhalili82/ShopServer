@@ -5,8 +5,9 @@ using Business.Model;
 
 namespace ShopServer.Controllers
 {
-
-    public class LessonController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class LessonController : ControllerBase
     {
 
         private ILessonService _LessonService;

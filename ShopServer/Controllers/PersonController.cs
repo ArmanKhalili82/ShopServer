@@ -4,7 +4,9 @@ using Business;
 
 namespace ShopServer.Controllers
 {
-    public class PersonController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class PersonController : ControllerBase
     {
 
         private IPersonService _PersonService;

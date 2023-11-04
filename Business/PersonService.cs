@@ -35,18 +35,6 @@ namespace Business
 
         public void Create(Person model)
         {
-            //Random random = new Random();
-            //int Id = random.Next(PersonsInfo.Count);
-            //model.Id = Id;
-            //if (model.Age < 18)
-            //{
-            //    string message = "Invalid Age You Should Be Higher Than 18";
-            //    string title = "Title";
-            //    MessageBox.Show(message, title);
-                
-            //}
-            //PersonsInfo.Add(model);
-
             if (model.Age > 18)
             {
                 Random random = new Random();
@@ -63,7 +51,14 @@ namespace Business
         public void Delete(int id)
         {
             var data = PersonsInfo.Where(l => l.Id == id).FirstOrDefault();
-            PersonsInfo.Remove(data);
+            if (data == null)
+            {
+                throw new Exception("There Is No Data")
+            }
+            else
+            {
+                PersonsInfo.Remove(data);
+            }
         }
 
         public List<Person> GetAll()
