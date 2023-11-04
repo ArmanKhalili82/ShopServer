@@ -13,6 +13,8 @@ import Product5 from './components/products/Product5'
 import Product6 from './components/products/Product6'
 import Table from "./pages/Table";
 import Createedit from "./pages/Createedit";
+import Mytable from "./pages/Mytable";
+import MYcreateedit from "./pages/MYcreateedit";
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             <Route path="/Product6" element={<Product6 />} />
             <Route path="/Table" element={<Table />} />
             <Route path="/Createedit/:lessonid" element={<Createedit />} />
+            <Route path="/Mytable" element={<Mytable />} />
+            <Route path="/MYcreateedit/:personid" element={<MYcreateedit />} />
         </Routes>
         <Footer />
       </BrowserRouter>

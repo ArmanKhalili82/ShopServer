@@ -16,28 +16,28 @@ namespace ShopServer.Controllers
         }
 
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAllPerson")]
         public IActionResult GetAll()
         {
             var data = _PersonService.GetAll();
             return Ok(data);
         }
 
-        [HttpGet("GetById/{id}")]
+        [HttpGet("GetByPersonId/{id}")]
         public IActionResult GetById(int id)
         {
             var data = _PersonService.GetById(id);
             return Ok(data);
         }
 
-        [HttpPut("Update")]
+        [HttpPut("UpdatePerson")]
         public IActionResult Update([FromBody] Person model)
         {
             _PersonService.Update(model);
             return Ok();
         }
 
-        [HttpPost("Create")]
+        [HttpPost("CreatePerson")]
         public IActionResult Create([FromBody] Person model)
         {
             _PersonService.Create(model);

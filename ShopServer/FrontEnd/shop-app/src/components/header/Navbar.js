@@ -32,6 +32,9 @@ const Navbar = () => {
                 <li className='nav-item'>
                     <Link className='menu-item' to='/Table'>Table</Link>
                 </li>
+                <li className='nav-item'>
+                    <Link className='menu-item' to='/Mytable'>My Table</Link>
+                </li>
             </ul>
         </div>
     </nav>

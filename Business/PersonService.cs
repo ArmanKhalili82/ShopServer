@@ -50,15 +50,8 @@ namespace Business
 
         public void Delete(int id)
         {
-            var data = PersonsInfo.Where(l => l.Id == id).FirstOrDefault();
-            if (data == null)
-            {
-                throw new Exception("There Is No Data")
-            }
-            else
-            {
-                PersonsInfo.Remove(data);
-            }
+            var data = PersonsInfo.Where(l => l.Id == id).First();
+            PersonsInfo.Remove(data);
         }
 
         public List<Person> GetAll()
@@ -68,13 +61,13 @@ namespace Business
 
         public Person GetById(int id)
         {
-            var data = PersonsInfo.Where(l => l.Id == id).FirstOrDefault();
+            var data = PersonsInfo.Where(l => l.Id == id).First();
             return data;
         }
 
         public void Update(Person model)
         {
-            var data = PersonsInfo.Where(l => l.Id == model.Id).FirstOrDefault();
+            var data = PersonsInfo.Where(l => l.Id == model.Id).First();
             data.Id = model.Id;
             data.Name = model.Name;
             data.Family = model.Family;
