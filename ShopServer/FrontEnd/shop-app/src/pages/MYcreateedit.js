@@ -14,7 +14,7 @@ const MYcreateedit = () => {
   const [weight, setWeight] = useState("");
 
   const getData = async() => {
-    const response = await fetch(`https://localhost:7034/GetByPersonId/${personid}`);
+    const response = await fetch(`https://localhost:7034/Person/GetByPersonId/${personid}`);
     const data = await response.json();
     setId(data.id);
     setName(data.name);
@@ -32,7 +32,7 @@ const MYcreateedit = () => {
 
   const handleUpdate = async() => {
     const data = {id: id, name: name, family: family, age: age, height: height, weight: weight}
-    await fetch("https://localhost:7034/UpdatePerson", {
+    await fetch("https://localhost:7034/Person/UpdatePerson", {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {"Content-Type": "application/json"}
@@ -43,7 +43,7 @@ const MYcreateedit = () => {
 
   const handleCreate = async() => {
     const data = {name: name, family: family, age: age, height: height, weight: weight}
-    await fetch("https://localhost:7034/CreatePerson", {
+    await fetch("https://localhost:7034/Person/CreatePerson", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {"Content-Type": "application/json"}

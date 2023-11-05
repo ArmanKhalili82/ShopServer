@@ -7,8 +7,8 @@ const Mytable = () => {
     const [search, setSearch] = useState("")
 
     const handleLoad = async() => {
-        const response = await fetch("https://localhost:7034/GetAllPerson")
-        const data = await JSON.stringify(response);
+        const response = await fetch("https://localhost:7034/Person/GetAllPerson")
+        const data = await response.json();
         setUsers(data)
     }
     
@@ -17,7 +17,7 @@ const Mytable = () => {
     },[])
 
     const handleDelete = async(id) => {
-        await fetch(`https://localhost:7034/Delete/${id}`, {method: "DELETE"})
+        await fetch(`https://localhost:7034/Person/Delete/${id}`, {method: "DELETE"})
         await handleLoad()
     }
 
