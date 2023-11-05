@@ -26,13 +26,13 @@ const Mytable = () => {
         <h1>This Is My Data Table</h1>
 
         <button>
-            <Link to={"/MYcreateedit"}>Create New</Link>
+            <Link to={"/MYcreateedit/new"}>Create New</Link>
         </button>
 
         <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
 
         <table style={{width: '100%', border: "1px solid black"}}>
-            {users.filter(u => u.name.includes(search)).map(user => {
+            {users.filter(u => u.name.includes(search)).map(user =>{
                 return (
                     <div>
                         <tr style={{border: "1px solid black"}}>
