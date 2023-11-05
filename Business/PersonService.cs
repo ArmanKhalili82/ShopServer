@@ -47,7 +47,7 @@ namespace Business
                 throw new Exception("Invalid Age You Should Be Higher Than 18");
             }
 
-            else if (model.Age < 18 && model.Name == string.IsNullOrEmpty)
+            else if (model.Age < 18 && model.Name == string.IsNullOrEmpty(model.Name))
             {
                 throw new Exception("Invalid Age And Name");
             }
