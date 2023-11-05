@@ -35,22 +35,20 @@ namespace Business
 
         public void Create(Person model)
         {
-            if (model.Age > 18)
-            {
-                Random random = new Random();
-                int Id = random.Next(PersonsInfo.Count);
-                model.Id = Id;
-                PersonsInfo.Add(model);
-            }
-            else if (model.Age < 18)
+            if (model.Age < 18)
             {
                 throw new Exception("Invalid Age You Should Be Higher Than 18");
             }
 
-            else if (model.Age < 18 && model.Name == string.IsNullOrEmpty(model.Name))
+            if (string.IsNullOrEmpty(model.Name))
             {
-                throw new Exception("Invalid Age And Name");
+                throw new Exception("Invalid Name");
             }
+
+                Random random = new Random();
+                int Id = random.Next(PersonsInfo.Count);
+                model.Id = Id;
+                PersonsInfo.Add(model);
         }
 
         public void Delete(int id)
