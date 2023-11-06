@@ -45,10 +45,10 @@ namespace Business
                 throw new Exception("Invalid Name");
             }
 
-                Random random = new Random();
-                int Id = random.Next(PersonsInfo.Count);
-                model.Id = Id;
-                PersonsInfo.Add(model);
+            Random random = new Random();
+            int Id = random.Next(PersonsInfo.Count);
+            model.Id = Id;
+            PersonsInfo.Add(model);
         }
 
         public void Delete(int id)

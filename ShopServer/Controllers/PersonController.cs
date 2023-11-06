@@ -40,8 +40,15 @@ namespace ShopServer.Controllers
         [HttpPost("CreatePerson")]
         public IActionResult Create([FromBody] Person model)
         {
-            _PersonService.Create(model);
-            return Ok();
+            try
+            {
+                _PersonService.Create(model);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpDelete("Delete/{id}")]
