@@ -50,11 +50,11 @@ const MYcreateedit = () => {
     })
 
     if (response.status == 200) {
-      navigate("/Mytable")
+      navigate("/Mytable");
     }
 
     else if (response.status == 400) {
-      badRequest(response)
+      await response.text();
     }
   }
 
