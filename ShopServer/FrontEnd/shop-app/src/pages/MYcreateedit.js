@@ -50,14 +50,12 @@ const MYcreateedit = () => {
     })
 
     if (response.status == 200) {
-      handleCreate()
+      navigate("/Mytable")
     }
 
-    else if (response.status == 404) {
+    else if (response.status == 400) {
       badRequest(response)
     }
-
-    navigate("/Mytable")
   }
 
   const handleSave = async() => {
