@@ -54,7 +54,8 @@ const MYcreateedit = () => {
     }
 
     else if (response.status == 400) {
-      await response.text();
+      const error = await response.text();
+      alert(error.message);
     }
   }
 
