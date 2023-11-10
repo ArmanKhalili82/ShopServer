@@ -43,11 +43,17 @@ const MYcreateedit = () => {
 
   const handleCreate = async() => {
     const data = {name: name, family: family, age: age, height: height, weight: weight}
-    await fetch("https://localhost:7034/Person/CreatePerson", {
+    const response = await fetch("https://localhost:7034/Person/CreatePerson", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {"Content-Type": "application/json"}
     })
+
+    if (response.status == 200) {
+      handleCreate()
+    }
+
+    els
 
     navigate("/Mytable")
   }
