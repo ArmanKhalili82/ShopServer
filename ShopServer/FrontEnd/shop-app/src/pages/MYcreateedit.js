@@ -53,7 +53,9 @@ const MYcreateedit = () => {
       handleCreate()
     }
 
-    els
+    else if (response.status == 404) {
+      badRequest(response)
+    }
 
     navigate("/Mytable")
   }
