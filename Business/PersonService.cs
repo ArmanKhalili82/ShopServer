@@ -84,16 +84,16 @@ namespace Business
             return data;
         }
 
-        public void Update(Person model, Error Model)
+        public void Update(Person model)
         {
             if (model.Age < 18)
             {
-                throw new Exception(Model.ErrorMessage);
+                throw new Exception();
             }
 
             if (string.IsNullOrEmpty(model.Name))
             {
-                throw new Exception(Model.ErrorMessage);
+                throw new Exception();
             }
 
             var data = PersonsInfo.Where(l => l.Id == model.Id).First();
