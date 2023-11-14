@@ -32,13 +32,20 @@ const MYcreateedit = () => {
 
   const handleUpdate = async() => {
     const data = {id: id, name: name, family: family, age: age, height: height, weight: weight}
-    await fetch("https://localhost:7034/Person/UpdatePerson", {
+    const response = await fetch("https://localhost:7034/Person/UpdatePerson", {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {"Content-Type": "application/json"}
     })
+      if (response.status == 200) {
+          navigate("/Mytable");
+      }
 
-    navigate("/Mytable")
+      else if (response.status == 400) {
+          const error = await response.json();
+          alert(error);
+      }
+    
   }
 
   const handleCreate = async() => {

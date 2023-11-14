@@ -33,6 +33,22 @@ namespace Business
             }
         };
 
+        private static List<Error> Errors = new List<Error>()
+        {
+            new Error()
+            {
+                ErrorTitle = "Invalid Age",
+                ErrorMessage = "You Should Be Higher Than 18"
+            },
+
+            new Error()
+            {
+                ErrorTitle = "Invalid Name",
+                ErrorMessage = "Name Can Not Be Empty"
+            }
+        };
+
+
         public void Create(Person model)
         {
             if (model.Age < 18)
@@ -68,8 +84,18 @@ namespace Business
             return data;
         }
 
-        public void Update(Person model)
+        public void Update(Person model, Error Model)
         {
+            if (model.Age < 18)
+            {
+                throw new Exception(Model.ErrorMessage);
+            }
+
+            if (string.IsNullOrEmpty(model.Name))
+            {
+                throw new Exception(Model.ErrorMessage);
+            }
+
             var data = PersonsInfo.Where(l => l.Id == model.Id).First();
             data.Id = model.Id;
             data.Name = model.Name;
