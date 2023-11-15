@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Business.Model;
 using Business;
+using System.Linq;
 
 namespace ShopServer.Controllers
 {
@@ -47,9 +48,9 @@ namespace ShopServer.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.Where());
-                public Error[] = Exception.Message;
-
+                var errorid = Convert.ToInt32(ex.Message);
+                var errorinfo = PersonService.Errors.Where(s => s.Id == errorid).First();
+                return BadRequest(ex.Message.Where(errorinfo));
             }
         }
 
