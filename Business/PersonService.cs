@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Business
@@ -37,12 +38,14 @@ namespace Business
         {
             new Error()
             {
+                Id = 1,
                 ErrorTitle = "Invalid Age",
                 ErrorMessage = "You Should Be Higher Than 18"
             },
 
             new Error()
             {
+                Id = 2,
                 ErrorTitle = "Invalid Name",
                 ErrorMessage = "Name Can Not Be Empty"
             }
