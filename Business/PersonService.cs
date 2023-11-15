@@ -34,7 +34,7 @@ namespace Business
             }
         };
 
-        private static List<Error> Errors = new List<Error>()
+        public static List<Error> Errors = new List<Error>()
         {
             new Error()
             {
@@ -56,12 +56,12 @@ namespace Business
         {
             if (model.Age < 18)
             {
-                throw new Exception("Invalid Age You Should Be Higher Than 18");
+                throw new Exception("1");
             }
 
             if (string.IsNullOrEmpty(model.Name))
             {
-                throw new Exception("Invalid Name");
+                throw new Exception("2");
             }
 
             Random random = new Random();
