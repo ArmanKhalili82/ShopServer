@@ -50,7 +50,7 @@ namespace ShopServer.Controllers
             {
                 var errorid = Convert.ToInt32(ex.Message);
                 var errorinfo = PersonService.Errors.Where(s => s.Id == errorid).First();
-                return BadRequest(ex.Message.Where(errorinfo));
+                return BadRequest(errorinfo);
             }
         }
 
