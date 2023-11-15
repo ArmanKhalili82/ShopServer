@@ -47,7 +47,9 @@ namespace ShopServer.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.Where(s => s.Id = model.Id).FirstOrDefault());
+                return BadRequest(ex.Message.Where());
+                public Error[] = Exception.Message;
+
             }
         }
 
