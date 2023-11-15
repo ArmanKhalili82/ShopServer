@@ -91,12 +91,12 @@ namespace Business
         {
             if (model.Age < 18)
             {
-                throw new Exception();
+                throw new Exception("1");
             }
 
             if (string.IsNullOrEmpty(model.Name))
             {
-                throw new Exception();
+                throw new Exception("2");
             }
 
             var data = PersonsInfo.Where(l => l.Id == model.Id).First();
